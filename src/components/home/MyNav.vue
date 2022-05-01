@@ -8,11 +8,11 @@
             <p>busca</p>
             <div class="login-area">
                 <div class="inputs">
-                    <input type="text" class="inputs__input" placeholder="agência">
+                    <input type="text" class="inputs__input" placeholder="agência" v-model="agency">
                     <span>|</span>
-                    <input type="text" class="inputs__input" placeholder="conta">
+                    <input type="text" class="inputs__input" placeholder="conta" v-model="account">
                 </div>
-                <button class="login-area__login-inactive"></button>
+                <button id="button--login" class="login-area__login-inactive"></button>
                 <button class="login-area__access">+ acessos</button>
                 <button class="login-area__account">abra sua conta</button>
             </div>
@@ -23,7 +23,15 @@
 export default {
     data(){
         return{
-
+            agency: '',
+            account: '',
+        }
+    },
+    methods:{
+        changeLoginButton(){
+            if(this.agency.length === 4 && this.account.length === 6){
+                //const button = document.getElementById('button--login')
+            }
         }
     }
 }
