@@ -5,3 +5,11 @@
     flex-direction: row;
     justify-content: space-around;
 }
+
+//Fonts
+@mixin main-font{
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: large;
+    font-weight: 400;
+}

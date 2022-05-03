@@ -1,11 +1,16 @@
 <template>
-    <my-nav></my-nav>
+    <div>
+        <my-nav></my-nav>
+        <slide-show></slide-show>
+    </div>
 </template>
 <script>
-import MyNav from "./MyNav.vue"
+import MyNav from "./menu/MyNav.vue"
+import SlideShow from './menu/SlideShow.vue'
 export default {
     components:{
-        MyNav
+        MyNav,
+        SlideShow
     }
 }
 </script>
