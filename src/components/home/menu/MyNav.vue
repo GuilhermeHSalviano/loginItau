@@ -84,6 +84,7 @@ export default {
 
             .navigator__links{
                 @include main-font;
+                color: white;
             }
 
             .login-area{

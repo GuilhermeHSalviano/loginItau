@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Cantarell&family=Josefin+Sans&family=Josefin+Slab&family=Montserrat&family=Sacramento&family=Sarabun:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Cantarell&family=Josefin+Sans&family=Josefin+Slab&family=Montserrat&family=Radio+Canada&family=Sacramento&family=Sarabun:wght@200&display=swap');
+
+
 //Display
 @mixin flex-row{
     align-items: center;
@@ -6,10 +10,22 @@
     justify-content: space-around;
 }
 
+@mixin flex-column {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
 //Fonts
 @mixin main-font{
-    color: white;
     font-family: 'Josefin Sans', sans-serif;
     font-size: large;
+    font-weight: 400;
+}
+
+@mixin secondary-font{
+    color: white;
+    font-family:'Radio Canada', sans-serif;
     font-weight: 400;
 }
