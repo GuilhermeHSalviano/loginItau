@@ -2,13 +2,13 @@
      <div class="slides__slide">
         <div class="slide__left--div">
             <div class="left--div__container">
-                <h3 id="title">Empréstimo consignado</h3>
-                <p id="subtitle">para aposentados e pensionistas INSS</p>
-                <button class="left--div__button">confira aqui</button>
+                <h3 id="title">Assistências para Pet do Itaú</h3>
+                <p id="subtitle">seu amor de quatro patas merece os melhores cuidados</p>
+                <button class="left--div__button">saiba mais</button>
             </div>
         </div>
         <div class="slide__right--div">
-            <img src="@/../static/elder-couple.webp" alt="Imagem de um casal de idosos." id="banner">
+            <img src="@/../static/dog.webp" alt="Imagem de um casal de idosos." id="banner">
         </div>
     </div>
 </template>

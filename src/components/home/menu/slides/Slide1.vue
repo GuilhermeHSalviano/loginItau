@@ -1,5 +1,5 @@
 <template>
-    <div class="slides__slide s1">
+    <div class="slides__slide">
         <div class="slide__left--div">
             <div class="left--div__container">
                 <h3 id="title">Abra sua conta online</h3>
@@ -36,14 +36,16 @@ export default {
 
         .left--div__container{
             @include flex-column;
-            @include secondary-font;
-            color: white;
 
             #title{
+                @include secondary-font;
+                color: white;
                 font-size: 2.5rem;
             }
 
             #subtitle{
+                @include secondary-font;
+                color: white;
                 font-size: 1.3rem;
             }
 

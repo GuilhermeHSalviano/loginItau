@@ -2,13 +2,13 @@
      <div class="slides__slide">
         <div class="slide__left--div">
             <div class="left--div__container">
-                <h3 id="title">Empréstimo consignado</h3>
-                <p id="subtitle">para aposentados e pensionistas INSS</p>
-                <button class="left--div__button">confira aqui</button>
+                <h3 id="title">pensando em comprar um carro?</h3>
+                <p id="subtitle">conte com parcelas que cabem no seu bolso</p>
+                <button class="left--div__button">simule agora</button>
             </div>
         </div>
         <div class="slide__right--div">
-            <img src="@/../static/elder-couple.webp" alt="Imagem de um casal de idosos." id="banner">
+            <img src="@/../static/hand-holding-a-key.webp" alt="Uma mão segurando a chave de um carro." id="banner">
         </div>
     </div>
 </template>
@@ -39,6 +39,7 @@ export default {
                     @include secondary-font;
                     font-size: 2.5rem;
                     margin-bottom: 2rem;
+                    text-align: center;
                 }
 
                 #subtitle{
