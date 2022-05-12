@@ -64,7 +64,6 @@ export default {
         }
     }
     .slide__right--div{
-        background-color: yellow;
         height: 100%;
         width: 60%;
 

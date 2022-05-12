@@ -2,21 +2,21 @@
     <div class="container">
         <div class="content">
             <div class="slide--container">
-                <input type="radio" class="radio--inputs" id="slide1" name="input" checked>
-                <input type="radio" class="radio--inputs" id="slide2" name="input">
-                <input type="radio" class="radio--inputs" id="slide3" name="input">
-                <input type="radio" class="radio--inputs" id="slide4" name="input">
+                <input type="radio" class="radio--inputs" id="slide1" name="input" checked value="firstSlide" v-model="radioInput">
+                <input type="radio" class="radio--inputs" id="slide2" name="input" value="secondSlide" v-model="radioInput">
+                <input type="radio" class="radio--inputs" id="slide3" name="input" value="thirdSlide" v-model="radioInput">
+                <input type="radio" class="radio--inputs" id="slide4" name="input" value="fourthSlide" v-model="radioInput">
                 <slide-1 class="container__slide s1"></slide-1>
-                <slide-2></slide-2>
-                <slide-3></slide-3>
-                <slide-4></slide-4>
+                <slide-2 class="container__slide"></slide-2>
+                <slide-3 class="container__slide"></slide-3>
+                <slide-4 class="container__slide"></slide-4>
             </div>
         </div>
         <div class="container__navigation">
-            <label for="slide1" class="switch">Abra sua conta online</label>
-            <label for="slide2" class="switch">Empréstimo consignado</label>
-            <label for="slide3" class="switch">Assistências para pet do Itaú</label>
-            <label for="slide4" class="switch">Pensando em comprar um carro?</label>
+            <label for="slide1" class="switch enabled" data-slide='first'>Abra sua conta online</label>
+            <label for="slide2" class="switch" data-slide='second'>Empréstimo consignado</label>
+            <label for="slide3" class="switch" data-slide='third'>Assistências para pet do Itaú</label>
+            <label for="slide4" class="switch" data-slide='fourth'>Pensando em comprar um carro?</label>
         </div>
     </div>
 </template>
@@ -32,6 +32,32 @@ export default {
         Slide2,
         Slide3,
         Slide4
+    },
+    data(){
+        return{
+            radioInput: ''
+        }
+    },
+    watch:{
+        radioInput(){
+            const radio = this.radioInput
+            const slide1 = {element: document.querySelector("[data-slide='first']"), value: 'firstSlide'}
+            const slide2 = {element: document.querySelector("[data-slide='second']"), value: 'secondSlide' }
+            const slide3 = {element: document.querySelector("[data-slide='third']"), value: 'thirdSlide'}
+            const slide4 = {element: document.querySelector("[data-slide='fourth']"), value: 'fourthSlide'}
+            const listSlides = [slide1, slide2, slide3, slide4]
+            listSlides.forEach(function(currentValue){
+                if(radio == currentValue.value){
+                    currentValue.element.classList.toggle('enabled')
+                    console.log(currentValue)
+                } else{
+                    if(currentValue.element.classList.contains('enabled')){
+                        currentValue.element.classList.remove('enabled')
+                        console.log('deu certo')
+                    }
+                }
+            })
+        }
     }
 }
 </script>
@@ -70,9 +96,14 @@ export default {
                     margin-left: -75%;
                 }
             
-            .radio--inputs{
-                display: none;
-            }
+                .radio--inputs{
+                    display: none;
+                }
+
+                .container__slide{
+                    transition: .6s;
+                    transition-timing-function: ease-in-out;
+                }
             }
         }
 
@@ -91,12 +122,31 @@ export default {
             
 
             .switch{
+                @include secondary-font;
                 cursor: pointer;
-                height: 3rem;
+                height: auto;
+                padding: 7px;
                 text-align: center;
             }
-            .switch:hover{
+
+            .enabled{
                 background-color: #33446f;
+            }
+            
+
+            .switch:first-child{
+                border-top-right-radius: 7px;
+                border-top-left-radius: 7px;
+            }
+
+            .switch:last-child{
+                border-bottom-right-radius: 7px;
+                border-bottom-left-radius: 7px;
+            }
+
+            .switch:hover{
+                background-color: #6784cc;
+                
             }
         }
     }
