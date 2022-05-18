@@ -3,7 +3,7 @@
         <div class="text">
             <h2>Teclado virtual</h2>
             <p>digite sa senha no teclado virtual:</p>
-            <input type="text">
+            <input type="text" readonly placeholder="senha eletrônica">
             <div class="phrase--container">
                 <p class="phrase--container__bolder">senha eletrônica:</p>
                 <p>usada para acessar à internet</p>

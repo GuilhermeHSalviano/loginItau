@@ -12,17 +12,19 @@
                     <span>|</span>
                     <input type="text" class="inputs__input" placeholder="conta" v-model="account" maxlength="6" id="account">
                 </div>
-                <button id="button--login" class="login-area__login-inactive"></button>
+                <button id="button--login" class="login-area__login-inactive" @click="loggingIn"></button>
                 <div class="login--buttons">
                     <button class="login--buttons__access">+ acessos</button>
                     <button class="login--buttons__account">abra sua conta</button>
                 </div>
+                <button @click="testando">teste</button>
             </div>
         </nav>
         
     </div>
 </template>
 <script>
+//import {routes} from '@/main.js'
 export default {
     data(){
         return{
@@ -57,7 +59,23 @@ export default {
                 button.focus()
             }
         }
-    }
+    },
+    methods:{
+        async loggingIn(){
+            const url = `http://localhost:3000/clientes`
+            const options = {method: 'GET'}
+
+            /*const response = await fetch(url, options)
+            const data = await response.json()
+            console.log(data[0].nome)*/
+
+            
+            fetch(url, options)
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.log(error.status))
+        },
+}   
 }
 </script>
 <style scoped lang='scss'>
@@ -133,6 +151,7 @@ export default {
                     border: none;
                     border-radius: 5px;
                     height: 50%;
+                    pointer-events: none;
                     width: 4rem;
                 }
                 .login-area__login-inactive::before{

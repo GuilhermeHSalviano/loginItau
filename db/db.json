@@ -1,8 +1,10 @@
 {
-    "ingredientes":[
+    "clientes":[
         {
-            "abc": "banana",
-            "dbr": "maca"
+            "nome": "guilherme",
+            "agencia": "1234",
+            "conta": "1111111",
+            "senha": "4321"
         }
     ]
 }
