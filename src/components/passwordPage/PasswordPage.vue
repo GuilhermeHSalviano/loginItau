@@ -18,7 +18,8 @@ import PasswordBox from './PasswordBox.vue'
 export default {
     components:{
         PasswordBox
-    }
+    },
+    props: ['items']
 }
 </script>
 <style lang="scss" scoped>

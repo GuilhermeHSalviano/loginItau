@@ -17,7 +17,6 @@
                     <button class="login--buttons__access">+ acessos</button>
                     <button class="login--buttons__account">abra sua conta</button>
                 </div>
-                <button @click="testando">teste</button>
             </div>
         </nav>
         
@@ -30,6 +29,7 @@ export default {
         return{
             agency: '',
             account: '',
+            teste: ''
         }
     },
     computed:{
@@ -61,20 +61,22 @@ export default {
         }
     },
     methods:{
-        async loggingIn(){
+        loggingIn(){
             const url = `http://localhost:3000/clientes`
             const options = {method: 'GET'}
 
-            /*const response = await fetch(url, options)
-            const data = await response.json()
-            console.log(data[0].nome)*/
-
-            
             fetch(url, options)
                 .then(response => response.json())
-                .then(data => console.log(data))
-                .catch(error => console.log(error.status))
-        },
+                .then(data => {
+                    this.$router.push({
+                        path: '/senha',
+                        params: {
+                            items: data
+                        }
+                    })
+                })
+                .catch(error => console.log(error.status))            
+    }
 }   
 }
 </script>
@@ -151,6 +153,7 @@ export default {
                     border: none;
                     border-radius: 5px;
                     height: 50%;
+                    //This property and value prevent the button of activating any event while the element possesses the class above 
                     pointer-events: none;
                     width: 4rem;
                 }
