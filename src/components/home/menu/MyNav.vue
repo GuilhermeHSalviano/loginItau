@@ -69,7 +69,7 @@ export default {
                 .then(response => response.json())
                 .then(data => {
                     this.$router.push({
-                        path: '/senha',
+                        name: 'login',
                         params: {
                             items: data
                         }

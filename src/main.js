@@ -13,7 +13,7 @@ import PasswordPage from './components/passwordPage/PasswordPage.vue'
 //Routes:
 export const routes = [
     {path: '', component: Home, title: 'Home'},
-    {path: '/senha', component: PasswordPage, title: 'PasswordPage', props: true}
+    {path: '/senha', name: 'login', component: PasswordPage, title: 'PasswordPage', props: true}
 ]
 
 //The app:
