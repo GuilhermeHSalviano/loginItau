@@ -20,6 +20,7 @@ export default {
         PasswordBox
     },
     props: ['items']
+
 }
 </script>
 <style lang="scss" scoped>

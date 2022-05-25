@@ -29,7 +29,6 @@ export default {
         return{
             agency: '',
             account: '',
-            teste: ''
         }
     },
     computed:{
@@ -62,6 +61,15 @@ export default {
     },
     methods:{
         loggingIn(){
+
+            this.$router.push({
+                name: 'login',
+                params:{
+                    items: [this.agency, this.account]
+                }
+            })
+
+            /*
             const url = `http://localhost:3000/clientes`
             const options = {method: 'GET'}
 
@@ -75,7 +83,7 @@ export default {
                         }
                     })
                 })
-                .catch(error => console.log(error.status))            
+                .catch(error => console.log(error.status))     */       
     }
 }   
 }

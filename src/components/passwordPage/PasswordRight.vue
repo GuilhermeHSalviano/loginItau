@@ -7,7 +7,7 @@
             <button class="buttons__numbers" @click="typeYourPassword(fourth[0], fourth[1])">{{ fourth[0] + " ou " + fourth[1] }}</button>
             <button class="buttons__numbers" @click="typeYourPassword(fifth[0], fifth[1])">{{ fifth[0] + " ou " + fifth[1] }}</button>
             <button class="buttons__numbers">Limpar</button>
-            <button class="buttons__numbers" id="access">Acessar</button>
+            <button class="buttons__numbers" id="access" @click="getAPI">Acessar</button>
         </div>
     </div>
 </template>
@@ -35,6 +35,19 @@ export default {
     methods:{
         typeYourPassword(number1, number2){
             this.$emit("emitPassword", number1, number2)
+        },
+        getAPI(){
+            const url = `http://localhost:3000/clientes`
+            const options = {method: 'GET'}
+
+            fetch(url, options)
+                .then(response => response.json())
+                .then(data => {
+                    this.$store.replaceState(JSON.stringify(data))
+                    
+                    })
+                .catch(error => console.log(error))
+            
         }
     }
 }
