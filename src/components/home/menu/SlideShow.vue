@@ -53,7 +53,6 @@ export default {
                 } else{
                     if(currentValue.element.classList.contains('enabled')){
                         currentValue.element.classList.remove('enabled')
-                        console.log('deu certo')
                     }
                 }
             })

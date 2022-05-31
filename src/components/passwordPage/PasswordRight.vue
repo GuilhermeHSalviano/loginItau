@@ -35,20 +35,7 @@ export default {
     methods:{
         typeYourPassword(number1, number2){
             this.$emit("emitPassword", number1, number2)
-        },
-        getAPI(){
-            const url = `http://localhost:3000/clientes`
-            const options = {method: 'GET'}
-
-            fetch(url, options)
-                .then(response => response.json())
-                .then(data => {
-                    this.$store.replaceState(JSON.stringify(data))
-                    
-                    })
-                .catch(error => console.log(error))
-            
-        }
+        }      
     }
 }
 </script>

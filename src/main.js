@@ -12,7 +12,7 @@ const store = new Vuex.Store({
     state: '',
     mutations:{
         defineAPI(api){
-            this.state = this.state.push(api)
+            this.state.push(api)
         }
     }
 })

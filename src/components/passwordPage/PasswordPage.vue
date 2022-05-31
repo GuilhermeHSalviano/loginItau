@@ -19,7 +19,20 @@ export default {
     components:{
         PasswordBox
     },
-    props: ['items']
+    props: ['items'],
+    created(){
+        const url = `http://localhost:3000/clientes`
+        const options = {method: 'GET'}
+        /*This request's been simplified considering the purpose of the job isn't deal with the complexity of the backend
+        in bank sites like this.
+         */
+        fetch(url, options)
+            .then(response => response.json())
+            .then(data => {
+                this.$store.replaceState(JSON.stringify(data))    
+                })
+            .catch(error => console.log(error))
+    }
 
 }
 </script>
