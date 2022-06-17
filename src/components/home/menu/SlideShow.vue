@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="slide--show--body">
         <div class="content">
             <div class="slide--container">
                 <input type="radio" class="radio--inputs" id="slide1" name="input" checked value="firstSlide" v-model="radioInput">

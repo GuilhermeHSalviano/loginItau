@@ -68,22 +68,6 @@ export default {
                     items: [this.agency, this.account]
                 }
             })
-
-            /*
-            const url = `http://localhost:3000/clientes`
-            const options = {method: 'GET'}
-
-            fetch(url, options)
-                .then(response => response.json())
-                .then(data => {
-                    this.$router.push({
-                        name: 'login',
-                        params: {
-                            items: data
-                        }
-                    })
-                })
-                .catch(error => console.log(error.status))     */       
     }
 }   
 }

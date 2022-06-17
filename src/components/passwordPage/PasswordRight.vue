@@ -7,7 +7,7 @@
             <button class="buttons__numbers" @click="typeYourPassword(fourth[0], fourth[1])">{{ fourth[0] + " ou " + fourth[1] }}</button>
             <button class="buttons__numbers" @click="typeYourPassword(fifth[0], fifth[1])">{{ fifth[0] + " ou " + fifth[1] }}</button>
             <button class="buttons__numbers">Limpar</button>
-            <button class="buttons__numbers" id="access" @click="getAPI">Acessar</button>
+            <button class="buttons__numbers" id="access" @click="analyzePassword">Acessar</button>
         </div>
     </div>
 </template>
@@ -19,7 +19,8 @@ export default {
             second: '',
             third: '',
             fourth: '',
-            fifth: ''
+            fifth: '',
+            password: []
         }
     },
     created(){
@@ -33,9 +34,33 @@ export default {
         
     },
     methods:{
+        //This method fills the array "password" with the numbers typed if that array length is less than twelve.
         typeYourPassword(number1, number2){
-            this.$emit("emitPassword", number1, number2)
-        }      
+            if(this.password.length < 12){
+                this.password.push(number1, number2)
+                this.$emit('inputAsterisk', "*")
+            } else {
+                alert("Você já digitou seis números!")
+            }
+        },
+        /*This method analyzes the password and treat it as correct or wrong. However, considering
+        the purpose of this job, we're not worried about being faithful to the real system of analyzes applied in banks sites.*/
+        analyzePassword(){
+            if(this.password.length == 12) {
+                let userPassword = JSON.parse(this.$store.state)
+                //Array.from() transforms an array-like or object into an array
+                userPassword = Array.from(String(userPassword[0].senha), Number)
+                let typedPassword = this.password
+
+                for(let a = 0; a < userPassword.length; a++){
+                    if(userPassword[a] != typedPassword[a*2] && userPassword[a] != typedPassword[(a*2)+1]){
+                       alert('Senha incorreta!')
+                       return 
+                    }
+                }
+                alert("Senha correta! Você será redirecionado à sua página de usuário.")
+            }
+        }     
     }
 }
 </script>
@@ -63,6 +88,12 @@ export default {
             border: none;
             border-radius: 7px;
             box-shadow: 2px 2px 5px black;
+            cursor: pointer;
+        }
+        .buttons__numbers:hover{
+            background-color: grey;
+            color: white;
+            transition: background .3s ease;
         }
 
         #access{
