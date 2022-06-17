@@ -1,5 +1,5 @@
 <template>
-    <div class="slide--show--body">
+    <div class="container">
         <div class="content">
             <div class="slide--container">
                 <input type="radio" class="radio--inputs" id="slide1" name="input" checked value="firstSlide" v-model="radioInput">
@@ -10,13 +10,13 @@
                 <slide-2 class="container__slide"></slide-2>
                 <slide-3 class="container__slide"></slide-3>
                 <slide-4 class="container__slide"></slide-4>
+                    <div class="container__navigation">
+                        <label for="slide1" class="switch enabled" data-slide='first'>Abra sua conta online</label>
+                        <label for="slide2" class="switch" data-slide='second'>Empréstimo consignado</label>
+                        <label for="slide3" class="switch" data-slide='third'>Assistências para pet do Itaú</label>
+                        <label for="slide4" class="switch" data-slide='fourth'>Pensando em comprar um carro?</label>
+                    </div>
             </div>
-        </div>
-        <div class="container__navigation">
-            <label for="slide1" class="switch enabled" data-slide='first'>Abra sua conta online</label>
-            <label for="slide2" class="switch" data-slide='second'>Empréstimo consignado</label>
-            <label for="slide3" class="switch" data-slide='third'>Assistências para pet do Itaú</label>
-            <label for="slide4" class="switch" data-slide='fourth'>Pensando em comprar um carro?</label>
         </div>
     </div>
 </template>
@@ -65,22 +65,24 @@ export default {
 @import "@/assets/scss/other-mixins.scss";
 
     .container{
-        display: inline;
-        position: absolute;
-        top: 15vh;
-        width: 100%;
+        height: 70vh;
         overflow: hidden;
+        position: relative;
+        width: 100vw;
 
         .content{
-        background-image: linear-gradient($itau-color, #f8913a);
-        display: flex;
-        height: 70vh;
-        width: 400%;
+            background-image: linear-gradient($itau-color, #f8913a);
+            display: flex;
+            height: 70vh;
+            width: 100vh;
 
             .slide--container{
+                position: absolute;
                 display: flex;
-                height: 100%;
-                width: 100%;
+                height: 70vh;
+                width: 400%;
+                overflow: hidden;
+
 
                 #slide1:checked ~ .s1{
                     margin-left: 0;
@@ -112,7 +114,7 @@ export default {
             display: flex;
             flex-direction: column;
             height: auto;
-            right: 5rem;
+            left: 70rem;
             position: absolute;
             top: calc((70vh / 2) - 6rem);
             width: 10rem;

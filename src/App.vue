@@ -1,7 +1,6 @@
 <template>
 	<div id="app">
 		<router-view></router-view>
-		<!--<home></home>-->
 	</div>
 </template>
 <script>
@@ -19,4 +18,8 @@ export default {
 	@import '@/assets/scss/reset-mixin.scss';
 
 	@include reset-css;
+
+	#app{
+		height: 100%;
+	}
 </style>

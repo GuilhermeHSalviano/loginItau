@@ -1,23 +1,28 @@
 <template>
     <div class="home">
         <my-nav></my-nav>
-        <slide-show class="slide--component"></slide-show>
-        <questoes-do-dia></questoes-do-dia>
+        <slide-show></slide-show>
+        <issues></issues>
+        <online-products></online-products>
     </div>
 </template>
 <script>
 import MyNav from "./menu/MyNav.vue"
 import SlideShow from './menu/SlideShow.vue'
-import QuestoesDoDia from './QuestoesDoDia.vue'
+import Issues from './Issues.vue'
+import OnlineProducts from './OnlineProducts.vue'
 export default {
     components:{
         MyNav,
         SlideShow,
-        QuestoesDoDia
+        Issues,
+        OnlineProducts
     }
 }
 </script>
 <style scoped lang='scss'>
-    .slide--component{
+    .home{
+        height: 100%;
+        overflow: hidden;
     }
 </style>

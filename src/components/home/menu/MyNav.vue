@@ -82,11 +82,13 @@ export default {
         height: 15vh;
         width: 100%;
         .navigator{
+            background: $itau-color;
             height: 15%;
             width: 100%;
             position: fixed;
             top: 0;
             right: 0;
+            z-index: 10;
             @include flex-row;
             .navigator__logo{
                 height: 60%;
