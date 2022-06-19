@@ -28,3 +28,20 @@
     font-family:'Radio Canada', sans-serif;
     font-weight: 400;
 }
+
+@mixin subtitle{
+    font-family: $basic-font;
+    font-size: 1.6rem;
+    font-weight: 900;
+    margin: 1rem 0 1rem 3vw;
+    width: calc(100vw - 3vw);
+}
+
+@mixin sub-subtitle{
+    font-family: $basic-font;
+    font-size: 1rem;
+    font-weight: 900;
+    margin: 1rem 0 1rem 3vw;
+    opacity: 60%;
+    width: calc(100vw - 3vw);
+}

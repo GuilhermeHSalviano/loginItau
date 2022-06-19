@@ -47,22 +47,18 @@ export default {
     .cards--container{
         @include flex-column;
         background-color: #f8eded;
-        width: 100;
+        width: 100%;
 
         .cards--title{
-            font-family: $basic-font;
-            font-size: 1.6rem;
-            font-weight: 900;
-            margin: 1rem 1rem 1rem 5rem;
-            width: 95%;
+            @include subtitle;
         }
 
         .cards--box{
             display: flex;
             flex-direction: row;
-            margin-left: 5rem;
+            margin-left: 3vw;
             margin-bottom: 2rem;
-            width: 100%;
+            width: calc(100vw - 3vw);
 
             .cards{
                 background: white;
@@ -73,7 +69,7 @@ export default {
                 flex-direction: column;
                 height: 10rem;
                 justify-content: space-around;
-                margin: 5px 10px 5px 10px;
+                margin: 5px 10px 5px 0;
                 width: 7.5rem;
 
                 .cards__title{
