@@ -6,6 +6,9 @@
         <online-products></online-products>
         <credit-cards></credit-cards>
         <itau-tag></itau-tag>
+        <apps-itau></apps-itau>
+        <location></location>
+        <other-links></other-links>
     </div>
 </template>
 <script>
@@ -15,6 +18,9 @@ import Issues from './Issues.vue'
 import OnlineProducts from './OnlineProducts.vue'
 import CreditCards from './CreditCards.vue'
 import ItauTag from './ItauTag.vue'
+import AppsItau from './AppsItau.vue'
+import Location from './Location.vue'
+import OtherLinks from './OtherLinks.vue'
 export default {
     components:{
         MyNav,
@@ -22,7 +28,10 @@ export default {
         Issues,
         OnlineProducts,
         CreditCards,
-        ItauTag
+        ItauTag,
+        AppsItau,
+        Location,
+        OtherLinks
     }
 }
 </script>
