@@ -8,6 +8,9 @@
     "lint": "vue-cli-service lint",
     "backend": "json-server -- watch db/db.json"
   },
+  "engines": {
+    "node": "16.x"
+  },
   "dependencies": {
     "core-js": "^3.6.5",
     "json-serve": "^0.1.0",
